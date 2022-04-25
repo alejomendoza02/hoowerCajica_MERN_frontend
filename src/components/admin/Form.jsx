@@ -190,7 +190,7 @@ const Form = () => {
             {/* URL Image */}
             <div className="mt-5">
               <label htmlFor="image" className="uppercase font-bold text-xl">
-                URL de la imágen
+                URL de la imágen del encabezado
               </label>
               <input
                 id="image"

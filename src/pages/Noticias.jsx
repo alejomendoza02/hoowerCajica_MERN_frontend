@@ -52,7 +52,7 @@ const Noticias = () => {
               <Link
                 key={noticia._id}
                 to={`/post/${noticia._id}`}
-                className="h-[500px] 2xl:h-[600px] bg-third hover:bg-secondary transition-all duration-500"
+                className="h-[500px] 2xl:h-[600px] bg-five hover:bg-secondary transition-all duration-500"
               >
                 {/* Header */}
                 <div className="h-1/2">
@@ -67,7 +67,7 @@ const Noticias = () => {
                   <h2 className="text-xl font-semibold font-merri">
                     {noticia.title}
                   </h2>
-                  <p>{noticia.createdAt.slice(0, 10)}</p>
+                  <p>{String(noticia.createdAt).slice(0, 10)}</p>
                   <p className="text-md ">
                     {noticia.body
                       .split(" ")

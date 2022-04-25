@@ -46,7 +46,7 @@ const Noticia = () => {
         </header>
         {/* General info */}
         <div className="w-full">
-          <p className="px-5 font-semibold">Publicado el: {post.createdAt}</p>
+          <p className="px-5 font-semibold">Publicado el: <span>{String(post.createdAt).slice(0,10)}</span></p>
         </div>
         <main>
           <div className="mt-10 p-5">

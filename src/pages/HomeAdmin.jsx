@@ -4,12 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import NavbarAdmin from "../components/admin/NavbarAdmin";
 import clienteAxios from "../config/clientAxios";
 import useAuth from "../hooks/useAuth";
+import Loader from "../components/Loader";
 
 const HomeAdmin = () => {
   // ------------------- HOOKS -------------------
   // ------------------- useState
 
   const [noticias, setNoticias] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   // ------------------- useNavigate
 
@@ -41,7 +43,10 @@ const HomeAdmin = () => {
           },
         };
         const { data } = await clienteAxios("/post/private", config);
+
         setNoticias(data);
+
+        setLoader(false);
       } catch (error) {
         console.log(error);
       }
@@ -64,14 +69,36 @@ const HomeAdmin = () => {
             >
               <ion-icon name="add-circle"></ion-icon>
             </Link>
-            <div className="w-full h-full p-5">
-              <p className="text-2xl font-bold py-5">Todas las noticias</p>
-            </div>
+
+            {loader ? (
+              <>
+                <div className="w-full h-full p-[100px]">
+                  <Loader />
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-full p-5">
+                <p className="text-2xl font-bold py-5">
+                  {noticias.length === 0
+                    ? "No hay noticias"
+                    : "Todas las noticias"}
+                </p>
+              </div>
+            )}
             {/* Here are the news */}
             <div className="bg-white h-[70vh] w-full  overflow-y-auto px-2">
               {/* News preview */}
               {noticias.map((noticia) => (
-                <PostPreview key={noticia._id} url={noticia.img_header} title={noticia.title} date = {noticia.createdAt} description = {noticia.body} id = {noticia._id} setNoticias = {setNoticias} noticias={noticias}/>
+                <PostPreview
+                  key={noticia._id}
+                  url={noticia.img_header}
+                  title={noticia.title}
+                  date={noticia.createdAt}
+                  description={noticia.body}
+                  id={noticia._id}
+                  setNoticias={setNoticias}
+                  noticias={noticias}
+                />
               ))}
             </div>
           </div>

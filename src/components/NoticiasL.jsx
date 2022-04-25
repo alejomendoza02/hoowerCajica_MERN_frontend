@@ -30,9 +30,17 @@ const NoticiasL = () => {
       <section className="w-full h-auto md:h-auto ">
         {/* General Container*/}
         <div className="max-w-screen-lg h-full mx-auto pt-5 md:relative">
-          <h2 className="text-4xl font-bold  text-center md:text-left">
-            Noticias
-          </h2>
+          <div className="md:flex md:items-center md:gap-2 md:h-auto">
+            <h2 className="text-4xl font-bold  text-center md:text-left">
+              Noticias
+            </h2>
+            <Link to="/noticias">
+              <div className="text-4xl hidden hover:bg-gray-100 focus:bg-gray-200 mt-2 transition-all duration-500 md:flex items-center p-3">
+                <ion-icon name="arrow-forward"></ion-icon>
+              </div>
+            </Link>
+          </div>
+
           <div className="h-full w-full flex flex-col md:flex-row md:gap-3 md:h-[400px] ">
             {noticiasP.map((noticia) => (
               <CardN
@@ -46,12 +54,7 @@ const NoticiasL = () => {
             ))}
           </div>
           <Link to="/noticias">
-            <div className="mt-10 text-4xl hidden absolute top-[45%] right-[-1.7em] hover:bg-gray-100 focus:bg-gray-200 transition-all duration-500 md:flex items-center p-3">
-              <ion-icon name="arrow-forward"></ion-icon>
-            </div>
-          </Link>
-          <Link to="/noticias">
-            <button className="mt-10 bg-white border-2 border-black px-10 py-2 text-black font-bold block mx-auto hover:bg-black hover:text-white transition-all duration-500 rounded-xl md:hidden">
+            <button className="mt-2 bg-white border-2 border-black px-10 py-2 text-black font-bold block mx-auto hover:bg-black hover:text-white transition-all duration-500 rounded-xl md:hidden">
               Ver más
             </button>
           </Link>
