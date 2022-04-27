@@ -75,6 +75,32 @@ const Navbar = () => {
 
   window.addEventListener("scroll", changeNav);
 
+  // Objects
+
+  const items = [
+    {
+      name: "inicio",
+      link: "/",
+    },
+    {
+      name: "noticias",
+      link: "/noticias",
+    },
+    {
+      name: "reflexiones",
+      link: "/reflexiones",
+    },
+    {
+      name: "biografia",
+      link: "/biografia",
+    },
+
+    {
+      name: "renacer",
+      link: "/renacer",
+    },
+  ];
+
   return (
     // Navbar
     <nav
@@ -108,61 +134,26 @@ const Navbar = () => {
             open ? "top-11 opacity-100" : "top-[-300px] opacity-0 "
           } transition-all duration-1000  z-[-1] md:static md:flex md:w-auto md:z-auto md:opacity-100`}
         >
-          {/* <li className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0">
-            <Link
-              className="text-gray-500 hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary "
-              to="/noticias"
+          {/* Items */}
+          {items.map((item) => (
+            <li
+              key={item.link}
+              className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray ease-in md:px-2 lg:px-5 md:py-0 md:text-[12px] xl:text-[18px] 2xl:text-[20px]"
             >
-              Noticias
-            </Link>
-          </li> */}
-
-          <li className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0">
-            <Link
-              className={`hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary ${
-                pathname === "/" ? "text-secondary" : "text-gray-500"
-              }`}
-              to="/"
-            >
-              Inicio
-            </Link>
-          </li>
-
-          <li className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0">
-            <Link
-              className={`hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary ${
-                pathname === "/noticias" ? "text-secondary" : "text-gray-500"
-              }`}
-              to="/noticias"
-            >
-              Noticias
-            </Link>
-          </li>
-
-          <li className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0">
-            <Link
-              className={`hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary ${
-                pathname === "/biografia" ? "text-secondary" : "text-gray-500"
-              }`}
-              to="/biografia"
-            >
-              Biografia
-            </Link>
-          </li>
-
-          <li className="bg-white uppercase font-semibold text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0">
-            <a
-              className="text-gray-500 hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary "
-              href="https://www.youtube.com/c/PadreHoowerCajic%C3%A1"
-              target="_blank"
-            >
-              Reflexiones
-            </a>
-          </li>
+              <Link
+                className={`hover:text-secondary transition-colors duration-200 md:hover:border-b-2  md:hover:border-secondary ${
+                  pathname === item.link ? "text-secondary" : "text-gray-500"
+                }`}
+                to={item.link}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
 
           {/* Dropdown*/}
           <li
-            className={`bg-white text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0 relative`}
+            className={`bg-white text-center p-4 text-lg text-self-gray  ease-in md:px-5 md:py-0 relative md:text-[12px] xl:text-[18px] `}
           >
             <button
               ref={dropRef}
@@ -184,7 +175,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-black"
-                    href="https://www.youtube.com/c/PadreHoowerCajic%C3%A1"
+                    href="https://www.youtube.com/watch?v=eo_vwauTtyY&list=PL_lm6ARbIBj86lrYM7GgoFyxYhLN5855l&ab_channel=PadreHoowerCajic%C3%A1"
                     target="_blank"
                   >
                     Pareja
@@ -193,7 +184,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-black"
-                    href="https://www.youtube.com/c/PadreHoowerCajic%C3%A1"
+                    href="https://www.youtube.com/watch?v=xQ6R8ffuKlo&list=PL_lm6ARbIBj8fD9iabDEE2acGqZtU5lpZ&ab_channel=PadreHoowerCajic%C3%A1"
                     target="_blank"
                   >
                     Religión

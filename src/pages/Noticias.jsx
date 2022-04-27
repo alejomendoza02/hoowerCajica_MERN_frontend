@@ -1,46 +1,18 @@
-import { useEffect, useState } from "react";
 import Header from "../components/generals/Header";
 import ImageHeader from "../img/biografia/img3.png";
-import clienteAxios from "../config/clientAxios";
 import { Link } from "react-router-dom";
+import useReflexiones from "../hooks/useReflexiones";
 
 const Noticias = () => {
   // ------------------- HOOKS -------------------
-  // ------------------- useState
 
-  const [noticias, setNoticias] = useState([]);
-  const [reflexiones, setReflexiones] = useState([]);
 
-  useEffect(() => {
-    obtenerDatos();
-    const getPosts = async () => {
-      try {
-        const { data } = await clienteAxios("/post/public");
-        setNoticias(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getPosts();
-  }, []);
-
-  const obtenerDatos = async () => {
-    const data = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?channelId=UCLWdgr_6AJogMp4EmirXnQw&part=snippet,id&order=date&maxResults=5&key=${
-        import.meta.env.VITE_KEY_YOUTUBE_API
-      }`
-    );
-    const users = await data.json();
-    const filerVideos = users.items.filter((video) =>
-      video.snippet.title.toLowerCase().includes("laúdes")
-    );
-    setReflexiones(filerVideos.slice(0, 1));
-  };
+  // ------------------- useReflexiones
+  const { reflexiones, noticias } = useReflexiones();
 
   return (
     <div className="w-full">
-      <Header bg="bg-third" reverse={true} img={ImageHeader}>
+      <Header bg="bg-third" reverse={false} img={ImageHeader}>
         Noticias
       </Header>
       <div className="md:max-w-screen-lg 2xl:max-w-screen-xl mx-auto md:flex md:gap-2">
@@ -90,7 +62,7 @@ const Noticias = () => {
           )}
         </div>
         {/* Right */}
-        <div className="hidden md:block w-1/3 bg-gray-100 h-1/2 rounded-md my-5 p-5">
+        <div className="hidden md:block w-1/3 bg-gray-100 h-1/2 rounded-md my-5 p-5 sticky">
           {noticias.length > 0 && (
             <>
               <h2 className="text-2xl font-semibold font-merri">
@@ -103,18 +75,19 @@ const Noticias = () => {
               ))}
             </>
           )}
+          <div className="hidden md:block w-full h-[2px] bg-primary mb-7" />
 
-          <h2 className="text-2xl font-semibold font-merri mt-10">
+          <h2 className="text-2xl font-semibold font-merri mt-3">
             Reflexión del día
           </h2>
-          {reflexiones.map((reflexion, index) => (
+          {reflexiones.slice(0,1).map((reflexion, index) => (
             <a
               href={`https://www.youtube.com/watch?v=${reflexion.id.videoId}`}
               className={`md:w-[240px]`}
               target="_blank"
               key={index}
             >
-              <div className="relative h-[400px] md:h-[300px] w-full mx-auto bg-white shadow-xl transition-all duration-500 my-10 md:w-full">
+              <div className="relative h-[400px] md:h-[300px] w-full mx-auto bg-white shadow-xl transition-all duration-500 my-10 md:w-full hover:bg-gray-100">
                 <div className="h-1/2 w-full bg-third">
                   <img
                     src={reflexion.snippet.thumbnails.high.url}

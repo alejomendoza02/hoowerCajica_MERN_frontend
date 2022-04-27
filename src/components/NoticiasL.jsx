@@ -40,7 +40,7 @@ const NoticiasL = () => {
               </div>
             </Link>
           </div>
-
+          <div className="hidden md:block w-[200px] h-[2px] bg-primary" />
           <div className="h-full w-full flex flex-col md:flex-row md:gap-3 md:h-[400px] ">
             {noticiasP.map((noticia) => (
               <CardN

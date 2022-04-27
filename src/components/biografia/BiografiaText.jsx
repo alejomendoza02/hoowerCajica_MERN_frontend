@@ -1,5 +1,6 @@
 import Image1 from "../../img/biografia/img1.png";
 import Image2 from "../../img/biografia/renacer.png";
+import { Link } from "react-router-dom";
 
 const BiografiaText = () => {
   return (
@@ -44,7 +45,7 @@ const BiografiaText = () => {
             estar bien, ¿por qué estamos mal? <br />
             <br />
           </p>
-          <p className="text-white text-lg text-center font-merri"> 
+          <p className="text-white text-lg text-center font-merri">
             Este espacio es de ustedes, aquí estoy para servir, pa’las que sea.
           </p>
         </div>
@@ -107,13 +108,15 @@ const BiografiaText = () => {
             </p>
 
             {/* Image */}
-            <div className="md:w-full md:h-[100px]">
-              <img
-                src={Image2}
-                alt="Foto del sacerdote Hoower Cajicá"
-                className="md:w-full md:h-full md:object-contain"
-              />
-            </div>
+            <Link to='renacer'>
+              <div className="md:w-full md:h-[100px]">
+                <img
+                  src={Image2}
+                  alt="Logo de la fundación renacer"
+                  className="md:w-full md:h-full md:object-contain"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
