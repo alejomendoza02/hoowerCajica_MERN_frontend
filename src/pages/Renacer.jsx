@@ -38,19 +38,25 @@ const Renacer = () => {
               Fundación Renacer
             </h1>
             <div className="w-full h-[300px] py-5 md:h-[450px]">
-              <img src={Img1} alt="" className="h-full object-cover mx-auto" />
+              <img
+                src={Img1}
+                alt="Hoower Cajicá con la camiseta de la fundación Renacer"
+                className="h-full object-cover mx-auto"
+              />
             </div>
             <p className="text-lg px-5">
-              <span className="text-xl font-merri font-semibold">Renacer</span>  en Vida Nueva; la fe y la religiosidad nos deben a ayudar
-              a ser más y mejores personas, no es suficiente con saber qué está
-              bien y qué no, es fundamental saber elegir aquello que nos
-              conviene y poner en práctica estilos de vida saludable desde una
-              antropología integral; RENACER quiere ser una ayuda para todos
-              aquellos que buscan estar mejor; hay una pregunta existencial que
-              nos sirve de punto de partida:
+              <span className="text-xl font-merri font-semibold">Renacer</span>{" "}
+              en Vida Nueva; la fe y la religiosidad nos deben a ayudar a ser
+              más y mejores personas, no es suficiente con saber qué está bien y
+              qué no, es fundamental saber elegir aquello que nos conviene y
+              poner en práctica estilos de vida saludable desde una antropología
+              integral; RENACER quiere ser una ayuda para todos aquellos que
+              buscan estar mejor; hay una pregunta existencial que nos sirve de
+              punto de partida:
             </p>
-            <p className="text-xl mt-5 py-5 text-center font-merri font-semibold italic bg-primary text-white md:rounded-xl md:shadow-xl">Pudiendo estar bien ¿por qué no lo
-              estoy?</p>
+            <p className="text-xl mt-5 py-5 text-center font-merri font-semibold italic bg-primary text-white md:rounded-xl md:shadow-xl">
+              Pudiendo estar bien ¿por qué no lo estoy?
+            </p>
           </div>
           {/* Second paragraph */}
           <div className="w-full flex flex-col md:flex-row md:items-center md:pb-5">
@@ -75,7 +81,11 @@ const Renacer = () => {
               </p>
             </div>
             <div className="w-full h-[300px] py-5 md:w-2/5 md:h-full">
-              <img src={Img2} alt="" className="w-full h-full object-cover" />
+              <img
+                src={Img2}
+                alt="Imágen de miembros de la fundación renacer"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -108,7 +118,11 @@ const Renacer = () => {
             </p>
           </div>
           <div className="w-full h-[300px] py-5 md:h-[600px]">
-            <img src={Img3} alt="" className="w-full h-full object-cover" />
+            <img
+              src={Img3}
+              alt="Imágen de miembros de la fundación renacer"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
