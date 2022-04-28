@@ -16,6 +16,7 @@ import Noticia from "./pages/Noticia.jsx";
 import Noticias from "./pages/Noticias.jsx";
 import NotFound from "./layouts/NotFound.jsx";
 import Reflexiones from "./pages/Reflexiones.jsx";
+import Renacer from "./pages/Renacer.jsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route path="noticias" element={<Noticias />} />
                   <Route path="post/:id" element={<Noticia />} />
                   <Route path="reflexiones" element={<Reflexiones />} />
+                  <Route path="renacer" element={<Renacer />} />
                 </Route>
               </Route>
 

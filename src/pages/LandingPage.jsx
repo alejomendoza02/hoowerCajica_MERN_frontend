@@ -4,15 +4,21 @@ import BiografiaL from "../components/BiografiaL";
 import FormacionL from "../components/FormacionL";
 import ReflexionesL from "../components/ReflexionesL";
 import NoticiasL from "../components/NoticiasL";
+import { Helmet } from "react-helmet";
 const LandingPage = () => {
   return (
-    <div className="h-full w-full">
-      <Slideshow />
-      <BiografiaL />
-      <ReflexionesL />
-      <NoticiasL />
-      <FormacionL />
-    </div>
+    <>
+      <Helmet>
+        <title>{`Inicio | Hoower Cajicá`}</title>
+      </Helmet>
+      <div className="h-full w-full">
+        <Slideshow />
+        <BiografiaL />
+        <ReflexionesL />
+        <NoticiasL />
+        <FormacionL />
+      </div>
+    </>
   );
 };
 
