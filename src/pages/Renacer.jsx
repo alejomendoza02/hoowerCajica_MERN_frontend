@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import ImageHeader from "../img/biografia/renacer.png";
-import Img1 from "../img/renacer/img1.jpg";
-import Img2 from "../img/renacer/img2.JPG";
-import Img3 from "../img/renacer/img3.jpg";
+import Img1 from "../img/renacer/img1.png";
+import Img2 from "../img/renacer/img2.png";
+import Img3 from "../img/renacer/img3.png";
 
 const Renacer = () => {
   return (
