@@ -95,7 +95,7 @@ const Noticia = () => {
                     </p>
                   </div>
                   <main>
-                    <div className="mt-10 p-5">
+                    <div className=" p-5">
                       <Markup content={post.body} />
                     </div>
                   </main>
