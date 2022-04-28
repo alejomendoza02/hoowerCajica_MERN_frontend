@@ -15,18 +15,18 @@ const Footer = () => {
           </p>
           {/* Images social media */}
           <div className="flex w-full h-full justify-center py-10 gap-5">
-            <div className="text-white text-6xl cursor-pointer md:text-4xl">
+            <a target='_blank' href='https://www.instagram.com/hoowercajica/' className="text-white text-6xl cursor-pointer md:text-4xl">
               <ion-icon name="logo-instagram"></ion-icon>
-            </div>
-            <div className="text-white text-6xl cursor-pointer md:text-4xl">
+            </a>
+            <a target='_blank' href='https://www.facebook.com/hoowercajica' className="text-white text-6xl cursor-pointer md:text-4xl">
               <ion-icon name="logo-facebook"></ion-icon>
-            </div>
-            <div className="text-white text-6xl cursor-pointer md:text-4xl">
+            </a>
+            <a target='_blank' href = 'https://www.youtube.com/c/PadreHoowerCajic%C3%A1' className="text-white text-6xl cursor-pointer md:text-4xl">
               <ion-icon name="logo-youtube"></ion-icon>
-            </div>
-            <div className="text-white text-6xl cursor-pointer md:text-4xl">
+            </a>
+            <a target='_blank' href='https://www.linkedin.com/in/hoowercajica/' className="text-white text-6xl cursor-pointer md:text-4xl">
               <ion-icon name="logo-linkedin"></ion-icon>
-            </div>
+            </a>
           </div>
         </div>
       </div>

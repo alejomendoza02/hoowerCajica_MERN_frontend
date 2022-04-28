@@ -58,8 +58,15 @@ const Reflexiones = () => {
                 ))}
               </div>
             </div>
-            {/* Right */}
-            <div className="hidden md:block w-1/3 bg-white pt-20 h-full p-5  transition-all duration-500 sticky top-0 right-0">
+            
+          </>
+        ) : (
+          <>
+          <h2 className="my-10 text-3xl font-merri font-semibold w-2/3">No hay reflexiones</h2>
+          </>
+        )}
+        {/* Right */}
+        <div className="hidden md:block w-1/3 bg-white pt-20 h-full p-5  transition-all duration-500 sticky top-0 right-0">
               <h1 className="text-black font-merri font-semibold text-2xl text-center">
                 Visita mi canal de Youtube
               </h1>
@@ -71,18 +78,14 @@ const Reflexiones = () => {
                 />
               </div>
               <button className="block mx-auto text-center px-10 py-2 bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500">
-                <a href="/    " target="_blank">
+                <a href="https://www.youtube.com/c/PadreHoowerCajic%C3%A1" target="_blank">
                   Ir a youtube
                 </a>{" "}
               </button>
             </div>
-          </>
-        ) : (
-          <>
-          <h2 className="my-10 text-3xl font-merri font-semibold">No hay reflexiones</h2>
-          </>
-        )}
+        
       </div>
+      
     </div>
   );
 };
