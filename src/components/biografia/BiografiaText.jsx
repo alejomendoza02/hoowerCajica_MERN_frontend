@@ -108,7 +108,7 @@ const BiografiaText = () => {
             </p>
 
             {/* Image */}
-            <Link to='renacer'>
+            <Link to='/renacer'>
               <div className="md:w-full md:h-[100px]">
                 <img
                   src={Image2}
