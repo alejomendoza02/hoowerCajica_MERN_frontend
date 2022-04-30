@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-1"><p className="w-full text-center">Designed &amp; Powered by Alejandro Mendoza</p></div>
+      <div><p className="py-2 text-gray-400 bg-primary w-full text-center">Designed &amp; Powered by Alejandro Mendoza</p></div>
     </footer>
   );
 };
