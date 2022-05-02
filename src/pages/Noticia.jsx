@@ -32,7 +32,9 @@ const Noticia = () => {
       }
     };
     getPost();
-    setLoad(false);
+    setTimeout(() => {
+      setLoad(false);
+    }, 500);
   }, [params]);
 
   // ------------------- useReflexiones
@@ -54,16 +56,16 @@ const Noticia = () => {
         ></meta>
       </Helmet>
       <section className="w-full">
-        {Object.getOwnPropertyNames(post).length === 0 ? (
-          <h1 className="font-merri text-4xl text-center h-[400px] pt-[100px]">
-            Esta noticia no existe
-          </h1>
+        {load ? (
+          <div className="max-w-screen-lg h-[300px] mx-auto">
+            <Loader />
+          </div>
         ) : (
           <>
-            {load ? (
-              <div className="max-w-screen-lg h-[300px] mx-auto">
-                <Loader />
-              </div>
+            {Object.getOwnPropertyNames(post).length === 0 ? (
+              <h1 className="font-merri text-4xl text-center h-[400px] pt-[100px]">
+                Esta noticia no existe
+              </h1>
             ) : (
               <>
                 <div className="max-w-screen-lg h-full mx-auto">
