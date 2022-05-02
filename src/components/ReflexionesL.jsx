@@ -21,11 +21,11 @@ const ReflexionesL = () => {
             {reflexiones.slice(0, 4).map((reflexion, index) => (
               <CardR
                 key={index}
-                url={`https://www.youtube.com/watch?v=${reflexion.id.videoId}`}
-                image={reflexion.snippet.thumbnails.high.url}
+                url={`https://www.youtube.com/watch?v=${reflexion.url}`}
+                image={reflexion.img_header}
                 index={index}
               >
-                {reflexion.snippet.title}
+                {reflexion.title}
               </CardR>
             ))}
           </div>

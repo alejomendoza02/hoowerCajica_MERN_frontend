@@ -1,5 +1,3 @@
-import { useRef, useEffect, useState } from "react";
-
 import Header from "../components/generals/Header";
 import ImageHeader from "../img/biografia/img2.png";
 import useReflexiones from "../hooks/useReflexiones";
@@ -23,19 +21,19 @@ const Reflexiones = () => {
             <>
               {/* Left */}
               <div className="w-full md:w-2/3 p-5">
-                <h1 className="font-merri text-4xl font-black">Laúdes</h1>
+                <h1 className="font-merri text-4xl font-black">Vídeos</h1>
                 {/* Cards Container */}
                 <div className="flex flex-col mt-5 gap-3 md:gap-10">
                   {/* Cards */}
                   {reflexiones.slice(0, 8).map((reflexion) => (
                     <div
-                      key={reflexion.id.videoId}
+                      key={reflexion._id}
                       className="bg-gray-200 hover:bg-gray-300 transition-all duration-300 w-full h-[400px] md:flex md:h-[200px]"
                     >
                       {/* Image */}
                       <div className="h-2/5 md:h-full md:w-2/5">
                         <img
-                          src={reflexion.snippet.thumbnails.high.url}
+                          src={reflexion.img_header}
                           alt="Vista previa de la reflexión"
                           className="w-full h-full object-cover"
                         />
@@ -44,14 +42,14 @@ const Reflexiones = () => {
                         {/* Text */}
                         <div className="h-3/5 p-5 flex flex-col justify-center">
                           <h2 className="text-xl text-center font-semibold font-merri md:text-left">
-                            {reflexion.snippet.title}
+                            {reflexion.title}
                           </h2>
                         </div>
                         {/* Buttons */}
                         <div className="h-2/5">
                           <button className="block mx-auto text-center px-10 py-2 bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500">
                             <a
-                              href={`https://www.youtube.com/watch?v=${reflexion.id.videoId}`}
+                              href={`https://www.youtube.com/watch?v=${reflexion.url}`}
                               target="_blank"
                             >
                               Ver

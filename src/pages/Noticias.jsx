@@ -86,7 +86,7 @@ const Noticias = () => {
             </h2>
             {reflexiones.slice(0, 1).map((reflexion, index) => (
               <a
-                href={`https://www.youtube.com/watch?v=${reflexion.id.videoId}`}
+                href={`https://www.youtube.com/watch?v=${reflexion.url}`}
                 className={`md:w-[240px]`}
                 target="_blank"
                 key={index}
@@ -94,7 +94,7 @@ const Noticias = () => {
                 <div className="relative h-[400px] md:h-[300px] w-full mx-auto bg-white shadow-xl transition-all duration-500 my-10 md:w-full hover:bg-gray-100">
                   <div className="h-1/2 w-full bg-third">
                     <img
-                      src={reflexion.snippet.thumbnails.high.url}
+                      src={reflexion.img_header}
                       className="w-full h-full object-cover"
                       alt="Imágen de vista previa a la reflexión"
                     />
@@ -103,7 +103,7 @@ const Noticias = () => {
                   {/* Title */}
                   <div className="h-1/2 w-full flex justify-center items-center">
                     <p className="w-2/3 text-[16px] text-center font-semibold md:text-[md] lg:text-md">
-                      {reflexion.snippet.title}
+                      {reflexion.title}
                     </p>
                   </div>
                 </div>

@@ -7,16 +7,12 @@ const ReflexionesProvider = ({ children }) => {
   const [noticias, setNoticias] = useState([]);
 
   const getReflexiones = async () => {
-    const data = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?channelId=UCLWdgr_6AJogMp4EmirXnQw&part=snippet,id&order=date&maxResults=20&key=${
-        import.meta.env.VITE_KEY_YOUTUBE_API
-      }`
-    );
-    const users = await data.json();
-    const filerVideos = users.items.filter((video) =>
-      video.snippet.title.toLowerCase().includes("laúdes")
-    );
-    setReflexiones(filerVideos);
+    try {
+      const { data } = await clienteAxios("/video");
+      setReflexiones(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const getNoticias = async () => {
