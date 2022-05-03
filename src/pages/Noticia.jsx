@@ -91,7 +91,11 @@ const Noticia = () => {
                   </header>
                   {/* General info */}
                   <div className="w-full">
-                    <p className="px-5 font-semibold">
+                    <p className="px-5 font-semibold font-merri">
+                      Autor:{" "}
+                      <span className="capitalize">{String(post.author)}</span>
+                    </p>
+                    <p className="px-5 font-semibold font-merri">
                       Publicado el:{" "}
                       <span>{String(post.createdAt).slice(0, 10)}</span>
                     </p>
@@ -131,10 +135,13 @@ const Noticia = () => {
                             <p>{String(noticia.createdAt).slice(0, 10)}</p>
                             <p className="text-md ">
                               {noticia.body
+                                .replace(
+                                  /(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi,
+                                  " "
+                                )
                                 .split(" ")
-                                .slice(0, 20)
-                                .join(" ")
-                                .replace(/(<([^>]+)>)/gi, " ")}
+                                .slice(0, 24)
+                                .join(" ")}
                               ...
                             </p>
                           </div>

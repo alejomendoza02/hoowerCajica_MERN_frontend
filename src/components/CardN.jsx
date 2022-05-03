@@ -18,7 +18,7 @@ const CardN = ({ url, image_url, title, date, description }) => {
         <div className="h-1/2 md:h-3/5 p-5 flex flex-col gap-3 text-white">
           <p className="text-xl font-semibold">{title}</p>
           <p>{date.slice(0,10)}</p>
-          <p className="text-md ">{description.split(' ').slice(0,20).join(' ').replace(/(<([^>]+)>)/ig, ' ')}...</p>
+          <p className="text-md ">{description.replace(/(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi, " ").split(' ').slice(0,22).join(' ')}...</p>
         </div>
       </div>
     </Link>

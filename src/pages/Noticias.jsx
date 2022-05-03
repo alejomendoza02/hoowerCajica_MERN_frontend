@@ -43,13 +43,13 @@ const Noticias = () => {
                     <h2 className="text-xl font-semibold font-merri">
                       {noticia.title}
                     </h2>
-                    <p>{String(noticia.createdAt).slice(0, 10)}</p>
+                    <p className="font-merri"><span className="capitalize">Autor: {String(noticia.author)}</span> | Publicado el: {String(noticia.createdAt).slice(0, 10)}</p>
                     <p className="text-md ">
                       {noticia.body
                         .split(" ")
-                        .slice(0, 20)
+                        .slice(0, 40)
                         .join(" ")
-                        .replace(/(<([^>]+)>)/gi, " ")}
+                        .replace(/(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi, " ")}
                       ...
                     </p>
                   </div>

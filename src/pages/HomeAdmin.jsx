@@ -96,6 +96,7 @@ const HomeAdmin = () => {
                   date={noticia.createdAt}
                   description={noticia.body}
                   id={noticia._id}
+                  author={noticia.author}
                   setNoticias={setNoticias}
                   noticias={noticias}
                 />

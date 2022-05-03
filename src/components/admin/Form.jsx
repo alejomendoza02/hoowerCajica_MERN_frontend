@@ -13,6 +13,7 @@ const Form = () => {
   const [title, setTitle] = useState("");
   const [img_header, setImg_header] = useState("");
   const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("");
   const [alerta, setAlerta] = useState({});
   const [button, setButton] = useState(true);
 
@@ -51,6 +52,7 @@ const Form = () => {
           setTitle(data.title);
           setImg_header(data.img_header);
           setBody(data.body);
+          setAuthor(data.author)
         } catch (error) {
           console.log(error);
         }
@@ -63,7 +65,7 @@ const Form = () => {
 
   const handlePost = (e) => {
     e.preventDefault();
-    if ([title, img_header, body].includes("")) {
+    if ([title, author, img_header, body].includes("")) {
       setAlerta({
         msg: "Todos los campos son obligatorios",
         error: true,
@@ -98,6 +100,7 @@ const Form = () => {
           title,
           img_header,
           body,
+          author
         },
         config
       );
@@ -132,6 +135,7 @@ const Form = () => {
           title,
           img_header,
           body,
+          author
         },
         config
       );
@@ -202,6 +206,23 @@ const Form = () => {
               />
             </div>
 
+            {/* Author */}
+            <div className="mt-5">
+              <label htmlFor="autor" className="uppercase font-bold text-xl ">
+                Autor de la noticia
+              </label>
+              <input
+                id="autor"
+                type="text"
+                placeholder="Ingrese el nombre del autor"
+                className="w-full mt-3 p-3 border rounded-xl placeholder-gray-600 capitalize"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
+            </div>
+
+            
+
             {/* Body */}
             <div className="mt-5">
               <label htmlFor="image" className="uppercase font-bold text-xl">
@@ -268,6 +289,21 @@ const Form = () => {
                 className="w-full mt-3 p-3 border rounded-xl placeholder-gray-600"
                 value={img_header}
                 onChange={(e) => setImg_header(e.target.value)}
+              />
+            </div>
+
+            {/* Author */}
+            <div className="mt-5">
+              <label htmlFor="autor" className="uppercase font-bold text-xl ">
+                Autor de la noticia
+              </label>
+              <input
+                id="autor"
+                type="text"
+                placeholder="Ingrese el nombre del autor"
+                className="w-full mt-3 p-3 border rounded-xl placeholder-gray-600 capitalize"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
               />
             </div>
 

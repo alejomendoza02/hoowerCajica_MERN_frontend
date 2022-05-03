@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import clienteAxios from "../../config/clientAxios";
 
-const PostPreview = ({ url, title, date, description, id, setNoticias, noticias }) => {
+const PostPreview = ({ url, title, date, description, id, author, setNoticias, noticias }) => {
   
   const deletePost = async () =>{
     if(confirm("¿Está seguro de eliminar esta noticia?")){
@@ -49,19 +49,20 @@ const PostPreview = ({ url, title, date, description, id, setNoticias, noticias 
           </p>
         </div>
         {/* Date */}
-        <div className="h-1/5">
+        <div className="h-1/5 md:flex gap-3">
+          <p className="capitalize">Autor: {author}</p>
           <p>Publicado el {date.slice(0,10)}</p>
         </div>
         {/* Description */}
         <div className="hidden w-full md:block">
           <p className="text-md">
-            {description.split(' ').slice(0,30).join(' ').replace(/(<([^>]+)>)/ig, ' ')} ...
+            {description.replace(/(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi, " ").split(' ').slice(0,30).join(' ')} ...
           </p>
         </div>
       </div>
 
       {/* Buttons */}
-      <div className="h-1/4 flex w-full justify-evenly items-center md:h-full md:w-[200px] md:flex md:flex-col md:pr-5">
+      <div className="h-1/4 flex w-full justify-evenly items-end pb-5 md:h-full md:w-[200px] md:flex md:flex-col md:pr-5 md:pb-0">
         <button onClick={() => navigate(`/admin/post/${id}`)} className="bg-secondary px-5 py-1 text-white font-semibold text-xl rounded-lg hover:bg-primary transition-all md:px-8">
           Editar
         </button>
