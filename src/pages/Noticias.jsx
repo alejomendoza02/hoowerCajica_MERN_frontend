@@ -14,6 +14,25 @@ const Noticias = () => {
     <>
       <Helmet>
         <title>{`Noticias | Hoower Cajicá`}</title>
+        <meta
+          name="description"
+          content="Noticias del sitio web oficial de Hoower Cajicá."
+        />
+        <meta name="keywords" content="Hoower Cajica, Noticias, Blog" />
+        <meta property="fb:app_id" content="123456789" />
+        <meta
+          property="og:image"
+          content="https://yt3.ggpht.com/ytc/AKedOLQhleKl-s_qkN9MUER2fgwCjhG07jwFDEtLdm4R=s900-c-k-c0x00ffffff-no-rj"
+        ></meta>
+        <meta
+          property="og:description"
+          content="Noticias del sitio web oficial de Hoower Cajicá."
+        />
+        <meta
+          property="og:url"
+          content="https://www.hoowercajica.com/noticias"
+        ></meta>
+        <meta property="og:type" content="website"></meta>
       </Helmet>
       <div className="w-full">
         <Header bg="bg-third" reverse={false} img={ImageHeader}>
@@ -43,13 +62,21 @@ const Noticias = () => {
                     <h2 className="text-xl font-semibold font-merri">
                       {noticia.title}
                     </h2>
-                    <p className="font-merri"><span className="capitalize">Autor: {String(noticia.author)}</span> | Publicado el: {String(noticia.createdAt).slice(0, 10)}</p>
+                    <p className="font-merri">
+                      <span className="capitalize">
+                        Autor: {String(noticia.author)}
+                      </span>{" "}
+                      | Publicado el: {String(noticia.createdAt).slice(0, 10)}
+                    </p>
                     <p className="text-md ">
                       {noticia.body
                         .split(" ")
                         .slice(0, 40)
                         .join(" ")
-                        .replace(/(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi, " ")}
+                        .replace(
+                          /(<[^>]*(>|$)|&nbsp;|&zwnj;|&raquo;|&laquo;|&gt;)/gi,
+                          " "
+                        )}
                       ...
                     </p>
                   </div>

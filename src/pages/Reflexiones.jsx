@@ -9,7 +9,23 @@ const Reflexiones = () => {
   return (
     <>
       <Helmet>
-        <title>{`Reflexiones | Hoower Cajicá`}</title>
+      <title>{`Reflexiones | Hoower Cajicá`}</title>
+        <meta
+          name="description"
+          content="Reflexiones de Hoower Cajicá. Visita mi canal de Youtube."
+        />
+        <meta name='keywords' content="Hoower Cajica, Reflexiones, Religión, Youtube, Blog, Laudes"/>
+        <meta property="fb:app_id" content="123456789" />
+        <meta
+          property="og:image"
+          content="https://yt3.ggpht.com/ytc/AKedOLQhleKl-s_qkN9MUER2fgwCjhG07jwFDEtLdm4R=s900-c-k-c0x00ffffff-no-rj"
+        ></meta>
+        <meta
+          property="og:description"
+          content="Reflexiones de Hoower Cajicá. Visita mi canal de Youtube."
+        />
+        <meta property="og:url" content="https://www.hoowercajica.com/reflexiones"></meta>
+        <meta property="og:type" content="website"></meta>
       </Helmet>
       <div className="h-full w-full">
         <Header bg="bg-five" reverse={true} img={ImageHeader}>

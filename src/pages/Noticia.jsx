@@ -46,14 +46,18 @@ const Noticia = () => {
     <>
       <Helmet>
         <title>{`Noticias | ${post.title}`}</title>
-        <meta property="og:type" content="website"></meta>
-        <meta property="og:title" content={`${post.title}`}></meta>
-        <meta property="og:description" content="Noticia."></meta>
-        <meta property="og:image" content={`${post.img_header}`}></meta>
+        <meta property="fb:app_id" content="123456789" />
         <meta
           property="og:url"
           content={`https://www.hoowercajica.com/post/${params.id}`}
-        ></meta>
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${post.title}`} />
+        <meta property="og:image" content={`${post.img_header}`} />
+        <meta property="og:image:alt" content="Encabezado de la noticia" />
+        <meta property="og:site_name" content="Hoower Cajicá" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="article:author" content={post.author}></meta>
       </Helmet>
       <section className="w-full">
         {load ? (
@@ -101,7 +105,7 @@ const Noticia = () => {
                     </p>
                   </div>
                   <main>
-                    <div className=" p-5">
+                    <div className="p-5">
                       <Markup content={post.body} />
                     </div>
                   </main>
