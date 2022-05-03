@@ -48,6 +48,7 @@ const NoticiasL = () => {
                 url={noticia._id}
                 image_url={noticia.img_header}
                 title={noticia.title}
+                author = {noticia.author}
                 date={noticia.createdAt}
                 description={noticia.body}
               />
