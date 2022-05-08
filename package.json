@@ -7,6 +7,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+
+  "homepage": "https://hoowercajica.com/",
+  "description": "Hoower Cajicá website, by Alejandro Mendoza.",
   "dependencies": {
     "axios": "^0.26.1",
     "interweave": "^13.0.0",
