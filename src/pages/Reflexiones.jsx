@@ -1,14 +1,14 @@
 import Header from "../components/generals/Header";
 import ImageHeader from "../img/biografia/img2.png";
 import useReflexiones from "../hooks/useReflexiones";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 
 const Reflexiones = () => {
   const { reflexiones } = useReflexiones();
 
   return (
     <>
-      <Helmet>
+      <MetaTags>
       <title>{`Reflexiones | Hoower Cajicá`}</title>
         <meta
           name="description"
@@ -26,7 +26,7 @@ const Reflexiones = () => {
         />
         <meta property="og:url" content="https://www.hoowercajica.com/reflexiones"></meta>
         <meta property="og:type" content="website"></meta>
-      </Helmet>
+      </MetaTags>
       <div className="h-full w-full">
         <Header bg="bg-five" reverse={true} img={ImageHeader}>
           {" "}
@@ -63,14 +63,12 @@ const Reflexiones = () => {
                         </div>
                         {/* Buttons */}
                         <div className="h-2/5">
-                          <button className="block mx-auto text-center px-10 py-2 bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500">
                             <a
                               href={`https://www.youtube.com/watch?v=${reflexion.url}`}
                               target="_blank"
-                            >
+                              className="block mx-[150px] text-center py-2 bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500">
                               Ver
                             </a>{" "}
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -97,14 +95,14 @@ const Reflexiones = () => {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <button className="block mx-auto text-center px-10 py-2 bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500">
-              <a
+
+              <a 
                 href="https://www.youtube.com/c/PadreHoowerCajic%C3%A1"
                 target="_blank"
+                className="block mx-[70px] py-2 text-center bg-third text-white rounded-xl font-bold hover:bg-secondary transition-all duration-500"
               >
                 Ir a youtube
               </a>{" "}
-            </button>
           </div>
         </div>
       </div>

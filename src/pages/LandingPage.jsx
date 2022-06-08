@@ -4,11 +4,11 @@ import BiografiaL from "../components/BiografiaL";
 import FormacionL from "../components/FormacionL";
 import ReflexionesL from "../components/ReflexionesL";
 import NoticiasL from "../components/NoticiasL";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 const LandingPage = () => {
   return (
     <>
-      <Helmet>
+      <MetaTags>
         <title>{`Inicio | Hoower Cajicá`}</title>
         <meta
           name="description"
@@ -29,7 +29,7 @@ const LandingPage = () => {
         />
         <meta property="og:url" content="https://www.hoowercajica.com"></meta>
         <meta property="og:type" content="website"></meta>
-      </Helmet>
+      </MetaTags>
       <div className="h-full w-full">
         <Slideshow />
         <BiografiaL />

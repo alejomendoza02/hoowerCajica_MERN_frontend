@@ -2,7 +2,7 @@ import Header from "../components/generals/Header";
 import ImageHeader from "../img/biografia/img3.png";
 import { Link } from "react-router-dom";
 import useReflexiones from "../hooks/useReflexiones";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 
 const Noticias = () => {
   // ------------------- HOOKS -------------------
@@ -12,7 +12,7 @@ const Noticias = () => {
 
   return (
     <>
-      <Helmet>
+      <MetaTags>
         <title>{`Noticias | Hoower Cajicá`}</title>
         <meta
           name="description"
@@ -33,7 +33,7 @@ const Noticias = () => {
           content="https://www.hoowercajica.com/noticias"
         ></meta>
         <meta property="og:type" content="website"></meta>
-      </Helmet>
+      </MetaTags>
       <div className="w-full">
         <Header bg="bg-third" reverse={false} img={ImageHeader}>
           Noticias

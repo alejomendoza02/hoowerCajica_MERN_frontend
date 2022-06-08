@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import clienteAxios from "../config/clientAxios";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 
 import Alerta from "../components/generals/Alerta";
 import Logo from "../img/logo_black_horizontal_nobg.png";
@@ -73,9 +73,9 @@ const LoginPage = () => {
     </div>
   ) : (
     <>
-      <Helmet>
+      <MetaTags>
         <meta name="google" content="nositelinkssearchbox" />
-      </Helmet>
+      </MetaTags>
       <main className="w-full h-screen bg-gray-100">
         {/* Back to home */}
         <div className="pt-10 md:pt-0">

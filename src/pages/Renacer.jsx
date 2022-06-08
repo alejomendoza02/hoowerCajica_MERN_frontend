@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 import ImageHeader from "../img/renacer/header.png";
 import Img1 from "../img/renacer/img1.png";
 import Img2 from "../img/renacer/img2.png";
@@ -8,7 +8,7 @@ import Img3 from "../img/renacer/img3.png";
 const Renacer = () => {
   return (
     <>
-      <Helmet>
+      <MetaTags>
       <title>{`Fundación Renacer | Hoower Cajicá`}</title>
         <meta
           name="description"
@@ -29,7 +29,7 @@ const Renacer = () => {
         />
         <meta property="og:url" content="https://www.hoowercajica.com"></meta>
         <meta property="og:type" content="website"></meta>
-      </Helmet>
+      </MetaTags>
       <div className="h-full w-full">
         <header
           className={`bg-third h-[500px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] w-full`}

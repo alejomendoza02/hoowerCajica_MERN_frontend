@@ -4,7 +4,7 @@ import clienteAxios from "../config/clientAxios";
 import { Markup } from "interweave";
 import useReflexiones from "../hooks/useReflexiones";
 import Loader from "../components/Loader";
-import { Helmet } from "react-helmet";
+import MetaTags from "react-meta-tags";
 
 const Noticia = () => {
   // ------------------- HOOKS -------------------
@@ -44,21 +44,33 @@ const Noticia = () => {
   );
   return (
     <>
-      <Helmet>
-        <title>{`Noticias | ${post.title}`}</title>
-        <meta property="fb:app_id" content="123456789" />
+      <MetaTags>
         <meta
           property="og:url"
-          content={`https://www.hoowercajica.com/post/${params.id}`}
+          content={String(`https://www.hoowercajica.com/post/${params.id}`)}
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${post.title}`} />
-        <meta property="og:image" content={`${post.img_header}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={String(`${post.title}`)} />
+        <meta property="og:image" content={String(`${post.img_header}`)} />
         <meta property="og:image:alt" content="Encabezado de la noticia" />
         <meta property="og:site_name" content="Hoower Cajicá" />
         <meta property="og:locale" content="en_US" />
-        <meta property="article:author" content={post.author}></meta>
-      </Helmet>
+        <meta property="article:author" content={String(post.author)}></meta>
+        <title>{`Noticias | ${String(post.title)}`}</title>
+
+        {/* <meta
+          property="og:url"
+          content="http://www.hoowercajica.com/"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Noticia" />
+        <meta property="og:image" content="https://i.ibb.co/KjLGBzT/285266618-5311928512199242-8004383512907060567-n.jpg" />
+        <meta property="og:image:alt" content="Encabezado de la noticia" />
+        <meta property="og:site_name" content="Hoower Cajicá" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="article:author" content="Pipe"/>
+        <title>Noticia | Pipe</title> */}
+      </MetaTags>
       <section className="w-full">
         {load ? (
           <div className="max-w-screen-lg h-[300px] mx-auto">

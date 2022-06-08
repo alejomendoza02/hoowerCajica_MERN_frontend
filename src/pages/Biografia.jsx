@@ -1,12 +1,12 @@
 import Header from "../components/generals/Header";
 import BiografiaText from "../components/biografia/BiografiaText";
 import ImageHeader from "../img/biografia/img4.png";
-import { Helmet } from "react-helmet";
+import MetaTags from 'react-meta-tags';
 
 const Biografia = () => {
   return (
     <>
-      <Helmet>
+      <MetaTags>
         <title>{`Biografía | Hoower Cajicá`}</title>
         <meta
           name="description"
@@ -23,7 +23,7 @@ const Biografia = () => {
         ></meta>
         <meta property="og:url" content="https://www.hoowercajica.com/biografia"></meta>
         <meta property="og:type" content="website"></meta>
-      </Helmet>
+      </MetaTags>
       <div className="h-full w-full">
         <Header bg="bg-secondary" reverse={true} img={ImageHeader}>
           {" "}
